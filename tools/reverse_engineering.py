@@ -11,7 +11,7 @@ class AndroGuard(HackingTool):
     DESCRIPTION = "Androguard is a Reverse engineering, Malware and goodware " \
                   "analysis of Android applications and more"
     INSTALL_COMMANDS = ["sudo pip3 install -U androguard"]
-    PROJECT_URL = "https://github.com/androguard/androguard "
+    PROJECT_URL = "https://github.com/androguard/androguard"
 
     def __init__(self):
         super().__init__(runnable=False)
@@ -25,7 +25,7 @@ class Apk2Gold(HackingTool):
         "git clone https://github.com/lxdvs/apk2gold.git",
         "cd apk2gold;sudo bash make.sh"
     ]
-    PROJECT_URL = "https://github.com/lxdvs/apk2gold "
+    PROJECT_URL = "https://github.com/lxdvs/apk2gold"
 
     def run(self):
         uinput = input("Enter (.apk) File >> ")

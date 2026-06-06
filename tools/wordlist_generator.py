@@ -68,7 +68,7 @@ class GoblinWordGenerator(HackingTool):
         console.print(panel)
 
 
-class showme(HackingTool):
+class ShowMe(HackingTool):
     TITLE = "Password list (1.4 Billion Clear Text Password)"
     DESCRIPTION = "This tool allows you to perform OSINT and reconnaissance on " \
                   "an organisation or an individual. It allows one to search " \
@@ -135,7 +135,7 @@ class WordlistGeneratorTools(HackingToolsCollection):
         Cupp(),
         WlCreator(),
         GoblinWordGenerator(),
-        showme(),
+        ShowMe(),
         Hashcat(),
         JohnTheRipper(),
         Haiti(),

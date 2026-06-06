@@ -80,7 +80,7 @@ class XSSCon(HackingTool):
     TITLE = "XSSCon"
     INSTALL_COMMANDS = [
         "git clone https://github.com/menkrep1337/XSSCon.git",
-        "sudo chmod 755 -R XSSCon"
+        "sudo chmod -R 755 XSSCon"
     ]
     PROJECT_URL = "https://github.com/menkrep1337/XSSCon"
 
@@ -114,7 +114,7 @@ class XSSStrike(HackingTool):
     INSTALL_COMMANDS = [
         "sudo rm -rf XSStrike",
         "git clone https://github.com/UltimateHackers/XSStrike.git "
-        "&& cd XSStrike && pip install -r requirements.txt"
+        "&& cd XSStrike && pip install --user -r requirements.txt"
     ]
     PROJECT_URL = "https://github.com/UltimateHackers/XSStrike"
 
@@ -127,11 +127,10 @@ class RVuln(HackingTool):
     SUPPORTED_OS = ["linux"]
     DESCRIPTION = "Multi-threaded and Automated Web Vulnerability Scanner written in Rust."
     INSTALL_COMMANDS = [
-        "git clone https://github.com/iinc0gnit0/RVuln.git;"
-        "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;"
-        "source $HOME/.cargo/env;"
-        "sudo apt install librust-openssl-dev;"
-        "cd RVuln;sudo su;cargo build --release;mv target/release/RVuln"
+        "git clone https://github.com/iinc0gnit0/RVuln.git",
+        "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
+        "sudo apt install -y librust-openssl-dev pkg-config libssl-dev",
+        "cd RVuln && cargo build --release && sudo cp target/release/RVuln /usr/local/bin/",
     ]
     RUN_COMMANDS = ["RVuln"]
     PROJECT_URL = "https://github.com/iinc0gnit0/RVuln"
