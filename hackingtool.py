@@ -53,6 +53,7 @@ from tools.active_directory import ActiveDirectoryTools
 from tools.cloud_security import CloudSecurityTools
 from tools.mobile_security import MobileSecurityTools
 from tools.password_attacks import PasswordAttackTools
+from tools.advanced_exploitation import AdvancedExploitationTools
 
 # ── Tool registry ──────────────────────────────────────────────────────────────
 
@@ -80,6 +81,7 @@ tool_definitions = [
     ("Cloud Security Tools",               "☁ ",  "Cloud Security"),
     ("Mobile Security Tools",              "📱",  "Mobile Security"),
     ("Password Attacks & Cracking",        "🔑",  "Password Attacks"),
+    ("Advanced Exploitation & C2",         "💀",  "Advanced Exploitation"),
     ("Other tools",                        "✨",  "Other Tools"),
     ("Update or Uninstall | Hackingtool",  "♻ ",  "Update / Uninstall"),
 ]
@@ -105,6 +107,7 @@ all_tools = [
     CloudSecurityTools(),
     MobileSecurityTools(),
     PasswordAttackTools(),
+    AdvancedExploitationTools(),
     OtherTools(),
     ToolManager(),
 ]
@@ -122,8 +125,8 @@ def show_help():
         Text.assemble(
             ("  Main menu\n", "bold white"),
             ("  ─────────────────────────────────────\n", "dim"),
-            ("  1–21   ", "bold cyan"), ("open a category\n", "white"),
-            ("  22     ", "bold cyan"), ("Update / Uninstall hackingtool\n", "white"),
+            ("  1–22   ", "bold cyan"), ("open a category\n", "white"),
+            ("  23     ", "bold cyan"), ("Update / Uninstall hackingtool\n", "white"),
             ("  / or s ", "bold cyan"), ("search tools by name or keyword\n", "white"),
             ("  t      ", "bold cyan"), ("filter tools by tag (osint, web, c2, ...)\n", "white"),
             ("  r      ", "bold cyan"), ("recommend tools for a task\n", "white"),
@@ -132,13 +135,13 @@ def show_help():
             ("  Inside a category\n", "bold white"),
             ("  ─────────────────────────────────────\n", "dim"),
             ("  1–N    ", "bold cyan"), ("select a tool\n", "white"),
-            ("  99     ", "bold cyan"), ("back to main menu\n", "white"),
+            ("  77 / b ", "bold cyan"), ("back to main menu\n", "white"),
             ("  98     ", "bold cyan"), ("open project page (if available)\n\n", "white"),
             ("  Inside a tool\n", "bold white"),
             ("  ─────────────────────────────────────\n", "dim"),
             ("  1      ", "bold cyan"), ("install tool\n", "white"),
             ("  2      ", "bold cyan"), ("run tool\n", "white"),
-            ("  99     ", "bold cyan"), ("back to category\n", "white"),
+            ("  77 / b ", "bold cyan"), ("back to category\n", "white"),
         ),
         title="[bold #ff00ff] ? Quick Help [/bold #ff00ff]",
         border_style="#ff00ff",
@@ -194,11 +197,7 @@ def _sys_info() -> dict:
 
     info["kernel"] = platform.release()
 
-    # Current user
-    try:
-        info["user"] = os.getlogin()
-    except Exception:
-        info["user"] = os.environ.get("USER", os.environ.get("LOGNAME", "root"))
+    info["user"] = "AdhiHub"
 
     info["host"] = socket.gethostname()
 
@@ -225,7 +224,7 @@ def _build_header() -> Panel:
         ("  kernel  ›  ", info["kernel"][:34]),
         ("  user    ›  ", f"{info['user']} @ {info['host'][:20]}"),
         ("  ip      ›  ", info["ip"]),
-        ("  tools   ›  ", f"{len(all_tools)} categories · 185+ modules"),
+            ("  tools   ›  ", f"{len(all_tools)} categories · 240+ tools"),
         ("  session ›  ", info["time"]),
         ("", ""),
         ("  python  ›  ", f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"),
@@ -416,11 +415,11 @@ def filter_by_tag():
         status = "[green]✔[/green]" if tool.is_installed else "[dim]✘[/dim]"
         table.add_row(str(i), status, tool.TITLE, cat)
 
-    table.add_row("99", "", "Back to main menu", "")
+    table.add_row("77", "", "Back to main menu", "")
     console.print(table)
 
     raw = Prompt.ask("[bold cyan]>[/bold cyan]", default="").strip()
-    if not raw or raw == "99":
+    if not raw or raw == "77":
         return
     try:
         idx = int(raw)
@@ -470,11 +469,11 @@ def recommend_tools():
     for i, task in enumerate(tasks, start=1):
         table.add_row(str(i), task.title())
 
-    table.add_row("99", "Back to main menu")
+    table.add_row("77", "Back to main menu")
     console.print(table)
 
     raw = Prompt.ask("[bold cyan]>[/bold cyan]", default="").strip()
-    if not raw or raw == "99":
+    if not raw or raw == "77":
         return
 
     try:
@@ -516,11 +515,11 @@ def recommend_tools():
             status = "[green]✔[/green]" if tool.is_installed else "[dim]✘[/dim]"
             rtable.add_row(str(i), status, tool.TITLE, cat)
 
-        rtable.add_row("99", "", "Back", "")
+        rtable.add_row("77", "", "Back", "")
         console.print(rtable)
 
         raw2 = Prompt.ask("[bold cyan]>[/bold cyan]", default="").strip()
-        if raw2 and raw2 != "99":
+        if raw2 and raw2 != "77":
             try:
                 ridx = int(raw2)
                 if 1 <= ridx <= len(matches):
@@ -568,11 +567,11 @@ def search_tools(query: str | None = None):
         desc = (tool.DESCRIPTION or "—").splitlines()[0]
         table.add_row(str(i), tool.TITLE, cat, desc)
 
-    table.add_row("99", "Back to main menu", "", "")
+    table.add_row("77", "Back to main menu", "", "")
     console.print(table)
 
     raw = Prompt.ask("[bold cyan]>[/bold cyan]", default="").strip().lower()
-    if not raw or raw == "99":
+    if not raw or raw == "77":
         return
 
     try:

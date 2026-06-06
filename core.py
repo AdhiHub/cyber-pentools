@@ -58,23 +58,23 @@ def validate_input(ip, val_range: list) -> int | None:
 
 def _show_inline_help():
     """Quick help available from any menu level."""
-        console.print(Panel(
-            Text.assemble(
-                ("  Navigation\n", "bold #00ffff"),
-                ("  ─────────────────────────────────\n", "dim"),
-                ("  1–N    ", "bold #00ffff"), ("select item\n", "white"),
-                ("  97     ", "bold #00ffff"), ("install all (in category)\n", "white"),
-                ("\n  Tool menu: Install, Run, Update, Open Folder\n", "dim"),
-                ("  99     ", "bold #00ffff"), ("go back\n", "white"),
-                ("  98     ", "bold #00ffff"), ("open project page / archived\n", "white"),
-                ("  ?      ", "bold #00ffff"), ("show this help\n", "white"),
-                ("  q      ", "bold #00ffff"), ("quit hackingtool\n", "white"),
-            ),
-            title="[bold #ff00ff] ? Quick Help [/bold #ff00ff]",
-            border_style="#ff00ff",
-            box=box.ROUNDED,
-            padding=(0, 2),
-        ))
+    console.print(Panel(
+        Text.assemble(
+            ("  Navigation\n", "bold #00ffff"),
+            ("  ─────────────────────────────────\n", "dim"),
+            ("  1–N    ", "bold #00ffff"), ("select item\n", "white"),
+            ("  97     ", "bold #00ffff"), ("install all (in category)\n", "white"),
+            ("\n  Tool menu: Install, Run, Update, Open Folder\n", "dim"),
+            ("  77     ", "bold #00ffff"), ("go back\n", "white"),
+            ("  98     ", "bold #00ffff"), ("open project page / archived\n", "white"),
+            ("  ?      ", "bold #00ffff"), ("show this help\n", "white"),
+            ("  q      ", "bold #00ffff"), ("quit hackingtool\n", "white"),
+        ),
+        title="[bold #ff00ff] ? Quick Help [/bold #ff00ff]",
+        border_style="#ff00ff",
+        box=box.ROUNDED,
+        padding=(0, 2),
+    ))
     Prompt.ask("[dim]Press Enter to return[/dim]", default="")
 
 
@@ -170,12 +170,12 @@ class HackingTool:
 
             if self.PROJECT_URL:
                 table.add_row("98", "Open Project Page")
-            table.add_row("99", f"Back to {parent.TITLE if parent else 'Main Menu'}")
+            table.add_row("77", f"Back to {parent.TITLE if parent else 'Main Menu'}")
             console.print(table)
             console.print(
                 "  [dim cyan]?[/dim cyan][dim]help  "
                 "[/dim][dim cyan]q[/dim cyan][dim]uit  "
-                "[/dim][dim cyan]99[/dim cyan][dim] back[/dim]"
+                "[/dim][dim cyan]77/b[/dim cyan][dim] back[/dim]"
             )
 
             raw = Prompt.ask("[bold cyan]╰─>[/bold cyan]", default="").strip().lower()
@@ -186,6 +186,8 @@ class HackingTool:
                 continue
             if raw in ("q", "quit", "exit"):
                 raise SystemExit(0)
+            if raw in ("b", "back"):
+                return
 
             try:
                 choice = int(raw)
@@ -194,7 +196,7 @@ class HackingTool:
                 Prompt.ask("[dim]Press Enter to continue[/dim]", default="")
                 continue
 
-            if choice == 99:
+            if choice == 77:
                 return
             elif choice == 98 and self.PROJECT_URL:
                 self.show_project_page()
@@ -393,16 +395,18 @@ class HackingToolsCollection:
                 reason = getattr(tool, "ARCHIVED_REASON", "No reason given")
                 table.add_row(str(i + 1), tool.TITLE, reason)
 
-            table.add_row("99", "Back", "")
+            table.add_row("77", "Back", "")
             console.print(table)
 
-            raw = Prompt.ask("[bold yellow][?] Select[/bold yellow]", default="99")
+            raw = Prompt.ask("[bold yellow][?] Select[/bold yellow]", default="77")
+            if raw.strip().lower() in ("b", "back"):
+                return
             try:
                 choice = int(raw)
             except ValueError:
                 continue
 
-            if choice == 99:
+            if choice == 77:
                 return
             elif 1 <= choice <= len(archived):
                 archived[choice - 1].show_options(parent=self)
@@ -442,12 +446,12 @@ class HackingToolsCollection:
             if incompatible:
                 console.print(f"[dim]({len(incompatible)} tools hidden — not supported on current OS)[/dim]")
 
-            table.add_row("99", "", f"Back to {parent.TITLE if parent else 'Main Menu'}", "")
+            table.add_row("77", "", f"Back to {parent.TITLE if parent else 'Main Menu'}", "")
             console.print(table)
             console.print(
                 "  [dim cyan]?[/dim cyan][dim]help  "
                 "[/dim][dim cyan]q[/dim cyan][dim]uit  "
-                "[/dim][dim cyan]99[/dim cyan][dim] back[/dim]"
+                "[/dim][dim cyan]77/b[/dim cyan][dim] back[/dim]"
             )
 
             raw = Prompt.ask("[bold cyan]╰─>[/bold cyan]", default="").strip().lower()
@@ -458,6 +462,8 @@ class HackingToolsCollection:
                 continue
             if raw in ("q", "quit", "exit"):
                 raise SystemExit(0)
+            if raw in ("b", "back"):
+                return
 
             try:
                 choice = int(raw)
@@ -465,7 +471,7 @@ class HackingToolsCollection:
                 console.print("[error]⚠ Enter a number, ? for help, or q to quit.[/error]")
                 continue
 
-            if choice == 99:
+            if choice == 77:
                 return
             elif choice == 97 and not_installed:
                 console.print(Panel(

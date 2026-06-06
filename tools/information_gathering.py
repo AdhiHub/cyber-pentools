@@ -386,6 +386,95 @@ class Naabu(HackingTool):
     PROJECT_URL = "https://github.com/projectdiscovery/naabu"
 
 
+class WhatWeb(HackingTool):
+    TITLE = "WhatWeb (CMS & Tech Fingerprinter)"
+    DESCRIPTION = (
+        "Identify content management systems, frameworks, and web technologies.\n"
+        "Usage: whatweb https://example.com -v"
+    )
+    SUPPORTED_OS = ["linux", "macos"]
+    INSTALL_COMMANDS = ["sudo apt-get install -y whatweb || brew install whatweb"]
+    RUN_COMMANDS = ["whatweb --help"]
+    PROJECT_URL = "https://github.com/urbanadventurer/WhatWeb"
+
+
+class Searchsploit(HackingTool):
+    TITLE = "Searchsploit (Exploit Database)"
+    DESCRIPTION = (
+        "Search and query the Exploit Database from your terminal.\n"
+        "Usage: searchsploit apache 2.4"
+    )
+    SUPPORTED_OS = ["linux"]
+    INSTALL_COMMANDS = ["sudo apt-get install -y exploitdb || git clone https://github.com/offensive-security/exploitdb.git /opt/exploitdb"]
+    RUN_COMMANDS = ["searchsploit --help"]
+    PROJECT_URL = "https://gitlab.com/exploit-database/exploitdb"
+
+
+class Enum4Linux(HackingTool):
+    TITLE = "enum4linux (Windows/Samba Enum)"
+    DESCRIPTION = (
+        "Enumerate Windows and Samba systems — users, shares, groups, policies.\n"
+        "Usage: enum4linux -a target"
+    )
+    SUPPORTED_OS = ["linux"]
+    INSTALL_COMMANDS = ["sudo apt-get install -y enum4linux"]
+    RUN_COMMANDS = ["enum4linux --help 2>&1 || echo 'Usage: enum4linux -a <target>'"]
+    PROJECT_URL = "https://github.com/portcullislabs/enum4linux"
+
+
+class SMBMap(HackingTool):
+    TITLE = "SMBMap (SMB Enumeration)"
+    DESCRIPTION = (
+        "Enumerate SMB shares, users, ACLs, and execute commands.\n"
+        "Usage: smbmap -H target -u admin -p pass"
+    )
+    SUPPORTED_OS = ["linux", "macos"]
+    INSTALL_COMMANDS = ["pip install --user smbmap"]
+    RUN_COMMANDS = ["smbmap --help"]
+    PROJECT_URL = "https://github.com/ShawnDEvans/smbmap"
+
+
+class Sn1per(HackingTool):
+    TITLE = "Sn1per (Automated Scanner)"
+    DESCRIPTION = (
+        "Automated pentest scanner — OSINT, port scan, vulnerability scan, exploitation.\n"
+        "Usage: sniper -t target.com -m automated"
+    )
+    SUPPORTED_OS = ["linux"]
+    INSTALL_COMMANDS = [
+        "git clone https://github.com/1N3/Sn1per.git",
+        "cd Sn1per && sudo bash install.sh",
+    ]
+    RUN_COMMANDS = ["sniper --help"]
+    PROJECT_URL = "https://github.com/1N3/Sn1per"
+
+
+class Legion(HackingTool):
+    TITLE = "Legion (Automated Pentest Framework)"
+    DESCRIPTION = (
+        "Graphical automated pentest framework with Nmap, Hydra, Nikto, Dirb, and more."
+    )
+    SUPPORTED_OS = ["linux"]
+    INSTALL_COMMANDS = ["sudo apt-get install -y legion"]
+    RUN_COMMANDS = ["legion"]
+    PROJECT_URL = "https://github.com/GoVanguard/Legion"
+
+
+class ReconFTW(HackingTool):
+    TITLE = "ReconFTW (Automated Recon)"
+    DESCRIPTION = (
+        "Full recon workflow — subdomain, crawling, JS analysis, port scan, screenshots.\n"
+        "Usage: ./reconftw.sh -d example.com"
+    )
+    SUPPORTED_OS = ["linux"]
+    INSTALL_COMMANDS = [
+        "git clone https://github.com/six2dez/reconftw.git",
+        "cd reconftw && sudo ./install.sh",
+    ]
+    RUN_COMMANDS = ["cd reconftw && ./reconftw.sh --help"]
+    PROJECT_URL = "https://github.com/six2dez/reconftw"
+
+
 class InformationGatheringTools(HackingToolsCollection):
     TITLE = "Information gathering tools"
     TOOLS = [
@@ -418,6 +507,13 @@ class InformationGatheringTools(HackingToolsCollection):
         Gau(),
         GoSpider(),
         Naabu(),
+        WhatWeb(),
+        Searchsploit(),
+        Enum4Linux(),
+        SMBMap(),
+        Sn1per(),
+        Legion(),
+        ReconFTW(),
     ]
 
 if __name__ == "__main__":
