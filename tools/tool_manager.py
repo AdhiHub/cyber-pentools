@@ -11,7 +11,7 @@ from constants import APP_INSTALL_DIR, APP_BIN_PATH, USER_CONFIG_DIR, REPO_URL
 
 class UpdateTool(HackingTool):
     TITLE = "Update Tool or System"
-    DESCRIPTION = "Update system packages or pull the latest hackingtool code"
+    DESCRIPTION = "Update system packages or pull the latest pentools code"
 
     def __init__(self):
         super().__init__([
@@ -48,12 +48,12 @@ class UpdateTool(HackingTool):
         if (APP_INSTALL_DIR / "venv" / "bin" / "pip").exists():
             subprocess.run([pip, "install", "-q", "-r",
                             str(APP_INSTALL_DIR / "requirements.txt")])
-        console.print("[success]✔ Hackingtool updated.[/success]")
+        console.print("[success]✔ Pentools updated.[/success]")
 
 
 class UninstallTool(HackingTool):
-    TITLE = "Uninstall HackingTool"
-    DESCRIPTION = "Remove hackingtool from system"
+    TITLE = "Uninstall Pentools"
+    DESCRIPTION = "Remove pentools from system"
 
     def __init__(self):
         super().__init__([
@@ -62,7 +62,7 @@ class UninstallTool(HackingTool):
 
     def uninstall(self):
         import shutil
-        console.print("[warning]This will remove hackingtool from your system.[/warning]")
+        console.print("[warning]This will remove pentools from your system.[/warning]")
         if not Confirm.ask("Continue?", default=False):
             return
 
@@ -80,13 +80,13 @@ class UninstallTool(HackingTool):
             shutil.rmtree(str(USER_CONFIG_DIR), ignore_errors=True)
             console.print(f"[success]✔ Removed {USER_CONFIG_DIR}[/success]")
 
-        console.print("[bold green]Hackingtool uninstalled. Goodbye.[/bold green]")
+        console.print("[bold green]Pentools uninstalled. Goodbye.[/bold green]")
         sleep(1)
         sys.exit(0)
 
 
 class ToolManager(HackingToolsCollection):
-    TITLE = "Update or Uninstall | Hackingtool"
+    TITLE = "Update or Uninstall | Pentools"
     TOOLS = [
         UpdateTool(),
         UninstallTool(),

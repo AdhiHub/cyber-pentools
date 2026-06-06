@@ -68,7 +68,7 @@ def _show_inline_help():
             ("  77     ", "bold #00ffff"), ("go back\n", "white"),
             ("  98     ", "bold #00ffff"), ("open project page / archived\n", "white"),
             ("  ?      ", "bold #00ffff"), ("show this help\n", "white"),
-            ("  q      ", "bold #00ffff"), ("quit hackingtool\n", "white"),
+            ("  q      ", "bold #00ffff"), ("quit pentools\n", "white"),
         ),
         title="[bold #ff00ff] ? Quick Help [/bold #ff00ff]",
         border_style="#ff00ff",
@@ -316,7 +316,7 @@ class HackingTool:
         tool_dir = self._get_tool_dir()
         if tool_dir:
             console.print(f"[success]Opening folder: {tool_dir}[/success]")
-            console.print("[dim]Type 'exit' to return to hackingtool.[/dim]")
+            console.print("[dim]Type 'exit' to return to pentools.[/dim]")
             os.system(f'cd "{tool_dir}" && $SHELL')
         else:
             console.print("[warning]Tool directory not found.[/warning]")

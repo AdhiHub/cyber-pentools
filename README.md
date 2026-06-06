@@ -18,7 +18,7 @@ sudo python3 install.py
 
 Then run:
 ```bash
-hackingtool
+pentools
 ```
 
 ### One-liner (Linux/macOS)
@@ -32,27 +32,27 @@ curl -sSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.
 
 | # | Category | Tools |
 |---|----------|-------|
-| 1 | 🛡 Anonymously Hiding | anonsurf, multitor |
+| 1 | 🔒 Anonymously Hiding | anonsurf, multitor |
 | 2 | 🔍 Information Gathering | nmap, masscan, rustscan, theHarvester, amass, subfinder, spiderfoot, gau, gospider, naabu, whatweb, searchsploit, enum4linux, smbmap, sn1per, legion, reconFTW + 25 more |
-| 3 | 📚 Wordlist Generator | cupp, crunch, cewl, hashcat, john, haiti, psudohash, mentalist + 10 more |
-| 4 | 📶 Wireless Attack | wifiphisher, wifite, fluxion, airgeddon, bettercap, hcxdumptool + 12 more |
-| 5 | 🧩 SQL Injection | sqlmap, nosqlmap, dsss, explo, blisqy, leviathan, sqlscan |
+| 3 | 🌐 Web Attack | nuclei, ffuf, feroxbuster, nikto, gobuster, wpscan, joomscan, katana, owasp zap, caido, mitmproxy, testssl, drupwn, arjun + 22 more |
+| 4 | 🧩 SQL Injection | sqlmap, nosqlmap, dsss, explo, blisqy, leviathan, sqlscan |
+| 5 | 💥 XSS Attack | dalfox, xsstrike, xspear, rvuln, xsscon, xss-freak + 8 more |
 | 6 | 🎣 Phishing Attack | setoolkit, socialfish, hiddeneye, evilginx, blackeye, shellphish, maskphish, dnstwist + 16 more |
-| 7 | 🌐 Web Attack | nuclei, ffuf, feroxbuster, nikto, gobuster, wpscan, joomscan, katana, owasp zap, caido, mitmproxy, testssl, drupwn, arjun + 22 more |
-| 8 | 🔧 Post Exploitation | pwncat, sliver, havoc, peass, ligolo, chisel, evil-winrm, mythic + 10 more |
-| 9 | 🕵 Forensics | wireshark, volatility3, binwalk, autopsy, bulk_extractor, pspy + 8 more |
-| 10 | 📦 Payload Creation | thefatrat, msfpc, venom, stitch, enigma + 8 more |
-| 11 | 🧰 Exploit Framework | routersploit, websploit, commix, web2attack |
-| 12 | 🔁 Reverse Engineering | ghidra, radare2, jadx, androguard, apk2gold |
-| 13 | ⚡ DDOS Attack | slowloris, ufonet, goldeneye, saphyra, asyncrone |
-| 14 | 🖥 Remote Admin (RAT) | pyshell |
-| 15 | 💥 XSS Attack | dalfox, xsstrike, xspear, rvuln, xsscon, xss-freak + 8 more |
-| 16 | 🖼 Steganography | steghide, stegcracker |
-| 17 | 🏢 Active Directory | bloodhound, netexec, impacket, responder, certipy, kerbrute |
-| 18 | ☁ Cloud Security | prowler, scoutsuite, pacu, trivy |
-| 19 | 📱 Mobile Security | mobsf, frida, objection |
-| 20 | 🔑 Password Attacks | hydra, medusa, lazagne, rubeus, mimikatz, sprayingtoolkit, domainpasswordspray, asreproast + 16 more |
-| 21 | 💀 Advanced Exploitation & C2 | metasploit, burpsuite, beef, empire, starkiller, merlin, covenant, silenttrinity, hackthebox, tryhackme |
+| 7 | 📶 Wireless Attack | wifiphisher, wifite, fluxion, airgeddon, bettercap, hcxdumptool + 12 more |
+| 8 | 🔑 Password Attacks | hydra, medusa, lazagne, rubeus, mimikatz, sprayingtoolkit, domainpasswordspray, asreproast + 16 more |
+| 9 | 📦 Payload Creation | thefatrat, msfpc, venom, stitch, enigma + 8 more |
+| 10 | 🧰 Exploit Framework | routersploit, websploit, commix, web2attack |
+| 11 | 💀 Advanced Exploitation & C2 | metasploit, burpsuite, beef, empire, starkiller, merlin, covenant, silenttrinity, hackthebox, tryhackme |
+| 12 | 🔧 Post Exploitation | pwncat, sliver, havoc, peass, ligolo, chisel, evil-winrm, mythic + 10 more |
+| 13 | 🏢 Active Directory | bloodhound, netexec, impacket, responder, certipy, kerbrute |
+| 14 | ☁ Cloud Security | prowler, scoutsuite, pacu, trivy |
+| 15 | 📱 Mobile Security | mobsf, frida, objection |
+| 16 | 🔁 Reverse Engineering | ghidra, radare2, jadx, androguard, apk2gold |
+| 17 | 🕵 Forensics | wireshark, volatility3, binwalk, autopsy, bulk_extractor, pspy + 8 more |
+| 18 | 🖼 Steganography | steghide, stegcracker |
+| 19 | 📚 Wordlist Generator | cupp, crunch, cewl, hashcat, john, haiti, psudohash, mentalist + 10 more |
+| 20 | ⚡ DDOS Attack | slowloris, ufonet, goldeneye, saphyra, asyncrone |
+| 21 | 🖥 Remote Admin (RAT) | pyshell |
 | 22 | ✨ Other Tools | social media, android, hash cracking, wifi jamming + 10 more |
 
 ---

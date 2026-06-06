@@ -133,7 +133,7 @@ def install_system_packages():
 # ── App directory ──────────────────────────────────────────────────────────────
 
 def _is_source_dir() -> bool:
-    """Check if install.py is being run from a local clone (hackingtool.py exists alongside it)."""
+    """Check if install.py is being run from a local clone."""
     return (Path(__file__).resolve().parent / "hackingtool.py").exists()
 
 
@@ -192,7 +192,7 @@ def create_venv_and_install():
 # ── Launcher script ────────────────────────────────────────────────────────────
 
 def create_launcher():
-    launcher = APP_INSTALL_DIR / "hackingtool.sh"
+    launcher = APP_INSTALL_DIR / "pentools.sh"
     launcher.write_text(
         "#!/bin/bash\n"
         f'source "{APP_INSTALL_DIR / VENV_DIR_NAME}/bin/activate"\n'
@@ -209,9 +209,9 @@ def create_launcher():
 
 def create_user_directories():
     """
-    Create ~/.hackingtool/ and write initial config.json.
+    Create ~/.pentools/ and write initial config.json.
     Uses Path.home() — always correct regardless of username or OS.
-    Safe to run as root (creates /root/.hackingtool/) or as a normal user.
+    Safe to run as root (creates /root/.pentools/) or as a normal user.
     """
     import json
     USER_CONFIG_DIR.mkdir(parents=True, exist_ok=True)
@@ -256,7 +256,7 @@ def main():
 
     console.print(Panel(
         "[bold magenta]Installation complete![/bold magenta]\n\n"
-        "Type [bold cyan]hackingtool[/bold cyan] in a terminal to start.",
+        "Type [bold cyan]pentools[/bold cyan] in a terminal to start.",
         border_style="magenta",
     ))
 
