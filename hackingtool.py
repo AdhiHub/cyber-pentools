@@ -81,7 +81,7 @@ tool_definitions = [
     ("Steganography tools",                "🖼 ", "Steganography"),
     ("Wordlist Generator",                 "📚",  "Wordlist Generator"),
     ("DDOS Attack Tools",                  "⚡",  "DDOS Attack"),
-    ("Remote Administrator Tools (RAT)",   "🖥 ", "Remote Admin (RAT)"),
+    ("Remote Administrator Tools (RAT)",   "🐀",  "Remote Admin (RAT)"),
     ("Other tools",                        "✨",  "Other Tools"),
     ("Update or Uninstall | Pentools",     "♻ ",  "Update / Uninstall"),
 ]

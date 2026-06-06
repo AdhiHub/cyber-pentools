@@ -54,7 +54,7 @@ curl -sSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.
 | 18 | 🖼 Steganography | steghide, stegcracker |
 | 19 | 📚 Wordlist Generator | cupp, crunch, cewl, hashcat, john, haiti, psudohash, mentalist + 10 more |
 | 20 | ⚡ DDOS Attack | slowloris, ufonet, goldeneye, saphyra, asyncrone |
-| 21 | 🖥 Remote Admin (RAT) | pyshell |
+| 21 | 🐀 Remote Admin (RAT) | pyshell |
 | 22 | ✨ Other Tools | social media, android, hash cracking, wifi jamming + 10 more |
 
 ---
@@ -114,7 +114,7 @@ curl -sSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.
 
 ## 🛠 Complete Tool Reference
 
-### 1. 🛡 Anonymously Hiding Tools
+### 1. 🔒 Anonymously Hiding
 | Tool | Description |
 |------|-------------|
 | AnonSurf | Route all traffic through Tor |
@@ -159,74 +159,7 @@ curl -sSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.
 | TruffleHog | Git secret scanning |
 | Gitleaks | Git repository secret scanner |
 
-### 3. 📚 Wordlist Generator (14 tools)
-| Tool | Description |
-|------|-------------|
-| Cupp | Common user passwords profiler |
-| Crunch | Custom character set wordlist generator |
-| CeWL | Spider-based wordlist generation |
-| Hashcat | World's fastest password cracker |
-| John | John the Ripper password cracker |
-| Haiti | Hash type identifier |
-| Psudohash | Keyword-based password mutation |
-| Mentalist | Graphical wordlist mutation tool |
-| PACK | Statsgen/maskgen/policygen toolkit |
-| SearchPass | Pattern-based password search |
-| TiKNR | Password mutation tool |
-| Statsgen | Password statistics analysis |
-| Maskgen | Hashcat mask generator |
-| Policygen | Password policy generator |
-
-### 4. 📶 Wireless Attack (13 tools)
-| Tool | Description |
-|------|-------------|
-| WiFi-Pumpkin | Rogue AP framework |
-| pixiewps | WPS offline brute-force (pixie dust) |
-| Fluxion | Evil twin attack automation |
-| Wifiphisher | Rogue AP social engineering |
-| Wifite | Automated wireless attack tool |
-| EvilTwin | Fake AP credential harvesting |
-| Airgeddon | Multi-use wireless audit suite |
-| Hcxdumptool | PMKID hash capture |
-| Hcxtools | WLAN packet to hash converter |
-| Bettercap | WiFi/BLE/Ethernet MITM framework |
-| BluePot | Bluetooth honeypot framework |
-| Howmanypeople | WiFi device counter |
-| Fastssh | Multi-threaded SSH brute-force |
-
-### 5. 🧩 SQL Injection (7 tools)
-| Tool | Description |
-|------|-------------|
-| Sqlmap | Automatic SQL injection detection/exploitation |
-| NoSqlMap | NoSQL injection audit tool |
-| DSSS | Damn Small SQLi Scanner |
-| Explo | YAML-based web security test cases |
-| Blisqy | Time-based blind SQLi on headers |
-| Leviathan | Mass audit toolkit with SQLi detection |
-| SQLScan | Quick web SQLi scanner |
-
-### 6. 🎣 Phishing Attack (17 tools)
-| Tool | Description |
-|------|-------------|
-| Setoolkit | Social Engineer Toolkit |
-| SocialFish | Automated phishing with 77 templates |
-| HiddenEye | Phishing with tunneling services |
-| Evilginx3 | MITM phishing framework |
-| BlackEye | 38 phishing page templates |
-| ShellPhish | Phishing for 18 social media |
-| Maskphish | URL masking/hiding |
-| Dnstwist | Domain typosquatting detection |
-| Autophisher | Automated phishing toolkit |
-| Pyphisher | Easy phishing with templates |
-| AdvPhishing | Advanced phishing with OTP |
-| ISeeYou | Location tracking via social engineering |
-| SayCheese | Webcam capture via malicious link |
-| QRJacking | QR code login hijacking |
-| Thanos | Browser-to-browser phishing |
-| QRLJacking | QR login session hijacking |
-| BlackPhish | Phishing framework |
-
-### 7. 🌐 Web Attack (23 tools)
+### 3. 🌐 Web Attack (23 tools)
 | Tool | Description |
 |------|-------------|
 | Nuclei | Template-based vulnerability scanner |
@@ -253,77 +186,18 @@ curl -sSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.
 | SubDomainTakeOver | Subdomain takeover detection |
 | Web2Attack | Web hacking framework |
 
-### 8. 🔧 Post Exploitation (10 tools)
+### 4. 🧩 SQL Injection (7 tools)
 | Tool | Description |
 |------|-------------|
-| Pwncat-cs | Reverse shell handler/automation |
-| Sliver | Adversary emulation C2 framework |
-| Havoc | Modern C2 with EDR evasion |
-| PEASS-ng | LinPEAS/WinPEAS priv-esc enumeration |
-| Ligolo-ng | TUN-based pivoting/tunneling |
-| Chisel | HTTP tunnel for pivoting |
-| Evil-WinRM | WinRM shell for Windows |
-| Mythic | Multi-payload C2 platform |
-| Vegile | Backdoor/rootkit hider |
-| ChromeKeyLogger | Chrome keylogger |
+| Sqlmap | Automatic SQL injection detection/exploitation |
+| NoSqlMap | NoSQL injection audit tool |
+| DSSS | Damn Small SQLi Scanner |
+| Explo | YAML-based web security test cases |
+| Blisqy | Time-based blind SQLi on headers |
+| Leviathan | Mass audit toolkit with SQLi detection |
+| SQLScan | Quick web SQLi scanner |
 
-### 9. 🕵 Forensics (8 tools)
-| Tool | Description |
-|------|-------------|
-| Wireshark | Network capture and analysis |
-| Volatility3 | Memory forensics framework |
-| Binwalk | Firmware analysis/extraction |
-| Autopsy | Forensic investigation platform |
-| BulkExtractor | Disk/file content extraction |
-| Pspy | Process monitor (no root) |
-| Guymager | Forensic disk imaging |
-| Toolsley | Online investigation tools |
-
-### 10. 📦 Payload Creation (8 tools)
-| Tool | Description |
-|------|-------------|
-| TheFatRat | AV-evading backdoor generator |
-| Brutal | Payload/HID attack toolkit |
-| Stitch | Cross-platform RAT generator |
-| MSFVenom PC | MSFvenom wrapper for payloads |
-| Venom | Shellcode generator |
-| Spycam | Webcam capture payload |
-| Mob-Droid | Metasploit payload generator |
-| Enigma | Multiplatform payload dropper |
-
-### 11. 🧰 Exploit Framework (4 tools)
-| Tool | Description |
-|------|-------------|
-| RouterSploit | Embedded device exploitation |
-| WebSploit | MITM framework |
-| Commix | Automated command injection |
-| Web2Attack | Web exploitation framework |
-
-### 12. 🔁 Reverse Engineering (5 tools)
-| Tool | Description |
-|------|-------------|
-| Ghidra | NSA reverse engineering framework |
-| Radare2 | Unix RE framework |
-| Jadx | Dex-to-Java decompiler |
-| AndroGuard | Android analysis/decompilation |
-| Apk2Gold | Android APK to Java |
-
-### 13. ⚡ DDOS Attack (6 tools)
-| Tool | Description |
-|------|-------------|
-| SlowLoris | HTTP DoS attack |
-| UFONet | P2P DDoS toolkit |
-| GoldenEye | HTTP DoS test tool |
-| Saphyra | Python DDoS script |
-| DDoSTool | 36-method DDoS attack script |
-| Asyncrone | SYN flood DDoS weapon |
-
-### 14. 🖥 Remote Admin (RAT)
-| Tool | Description |
-|------|-------------|
-| PyShell | Python-based remote administration |
-
-### 15. 💥 XSS Attack (9 tools)
+### 5. 💥 XSS Attack (9 tools)
 | Tool | Description |
 |------|-------------|
 | DalFox | XSS parameter analysis/scanner |
@@ -336,38 +210,45 @@ curl -sSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.
 | XSS Payload Gen | Payload/dork generator |
 | Extended XSS Search | XSS finder framework |
 
-### 16. 🖼 Steganography
+### 6. 🎣 Phishing Attack (17 tools)
 | Tool | Description |
 |------|-------------|
-| Steghide | Hide data in images/audio |
-| Stegcracker | Steghide password brute-forcer |
+| Setoolkit | Social Engineer Toolkit |
+| SocialFish | Automated phishing with 77 templates |
+| HiddenEye | Phishing with tunneling services |
+| Evilginx3 | MITM phishing framework |
+| BlackEye | 38 phishing page templates |
+| ShellPhish | Phishing for 18 social media |
+| Maskphish | URL masking/hiding |
+| Dnstwist | Domain typosquatting detection |
+| Autophisher | Automated phishing toolkit |
+| Pyphisher | Easy phishing with templates |
+| AdvPhishing | Advanced phishing with OTP |
+| ISeeYou | Location tracking via social engineering |
+| SayCheese | Webcam capture via malicious link |
+| QRJacking | QR code login hijacking |
+| Thanos | Browser-to-browser phishing |
+| QRLJacking | QR login session hijacking |
+| BlackPhish | Phishing framework |
 
-### 17. 🏢 Active Directory (6 tools)
+### 7. 📶 Wireless Attack (13 tools)
 | Tool | Description |
 |------|-------------|
-| BloodHound | AD attack path mapping |
-| NetExec (nxc) | Network pentesting (CrackMapExec successor) |
-| Impacket | SMB/MSRPC/Kerberos protocol tools |
-| Responder | LLMNR/NBT-NS/MDNS poisoner |
-| Certipy | AD CS enumeration/abuse |
-| Kerbrute | Kerberos pre-auth brute-force |
+| WiFi-Pumpkin | Rogue AP framework |
+| pixiewps | WPS offline brute-force (pixie dust) |
+| Fluxion | Evil twin attack automation |
+| Wifiphisher | Rogue AP social engineering |
+| Wifite | Automated wireless attack tool |
+| EvilTwin | Fake AP credential harvesting |
+| Airgeddon | Multi-use wireless audit suite |
+| Hcxdumptool | PMKID hash capture |
+| Hcxtools | WLAN packet to hash converter |
+| Bettercap | WiFi/BLE/Ethernet MITM framework |
+| BluePot | Bluetooth honeypot framework |
+| Howmanypeople | WiFi device counter |
+| Fastssh | Multi-threaded SSH brute-force |
 
-### 18. ☁ Cloud Security (4 tools)
-| Tool | Description |
-|------|-------------|
-| Prowler | AWS/Azure/GCP security scanner |
-| ScoutSuite | Multi-cloud auditing |
-| Pacu | AWS exploitation framework |
-| Trivy | Container/K8s/IaC scanner |
-
-### 19. 📱 Mobile Security (3 tools)
-| Tool | Description |
-|------|-------------|
-| MobSF | Mobile app pentesting framework |
-| Frida | Dynamic instrumentation toolkit |
-| Objection | Runtime mobile exploration |
-
-### 20. 🔑 Password Attacks (18 tools)
+### 8. 🔑 Password Attacks (18 tools)
 | Tool | Description |
 |------|-------------|
 | Hydra | Parallel network login cracker |
@@ -389,7 +270,27 @@ curl -sSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.
 | SearchPass | Pattern password search |
 | TiKNR | Password mutator |
 
-### 21. 💀 Advanced Exploitation & C2 (10 tools)
+### 9. 📦 Payload Creation (8 tools)
+| Tool | Description |
+|------|-------------|
+| TheFatRat | AV-evading backdoor generator |
+| Brutal | Payload/HID attack toolkit |
+| Stitch | Cross-platform RAT generator |
+| MSFVenom PC | MSFvenom wrapper for payloads |
+| Venom | Shellcode generator |
+| Spycam | Webcam capture payload |
+| Mob-Droid | Metasploit payload generator |
+| Enigma | Multiplatform payload dropper |
+
+### 10. 🧰 Exploit Framework (4 tools)
+| Tool | Description |
+|------|-------------|
+| RouterSploit | Embedded device exploitation |
+| WebSploit | MITM framework |
+| Commix | Automated command injection |
+| Web2Attack | Web exploitation framework |
+
+### 11. 💀 Advanced Exploitation & C2 (10 tools)
 | Tool | Description |
 |------|-------------|
 | Metasploit Framework | World's #1 penetration testing framework |
@@ -402,6 +303,105 @@ curl -sSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.
 | SILENTTRINITY | Python C2 with IronPython agent |
 | HackTheBox | CTF/practice platform CLI |
 | TryHackMe | Browser-based security training |
+
+### 12. 🔧 Post Exploitation (10 tools)
+| Tool | Description |
+|------|-------------|
+| Pwncat-cs | Reverse shell handler/automation |
+| Sliver | Adversary emulation C2 framework |
+| Havoc | Modern C2 with EDR evasion |
+| PEASS-ng | LinPEAS/WinPEAS priv-esc enumeration |
+| Ligolo-ng | TUN-based pivoting/tunneling |
+| Chisel | HTTP tunnel for pivoting |
+| Evil-WinRM | WinRM shell for Windows |
+| Mythic | Multi-payload C2 platform |
+| Vegile | Backdoor/rootkit hider |
+| ChromeKeyLogger | Chrome keylogger |
+
+### 13. 🏢 Active Directory (6 tools)
+| Tool | Description |
+|------|-------------|
+| BloodHound | AD attack path mapping |
+| NetExec (nxc) | Network pentesting (CrackMapExec successor) |
+| Impacket | SMB/MSRPC/Kerberos protocol tools |
+| Responder | LLMNR/NBT-NS/MDNS poisoner |
+| Certipy | AD CS enumeration/abuse |
+| Kerbrute | Kerberos pre-auth brute-force |
+
+### 14. ☁ Cloud Security (4 tools)
+| Tool | Description |
+|------|-------------|
+| Prowler | AWS/Azure/GCP security scanner |
+| ScoutSuite | Multi-cloud auditing |
+| Pacu | AWS exploitation framework |
+| Trivy | Container/K8s/IaC scanner |
+
+### 15. 📱 Mobile Security (3 tools)
+| Tool | Description |
+|------|-------------|
+| MobSF | Mobile app pentesting framework |
+| Frida | Dynamic instrumentation toolkit |
+| Objection | Runtime mobile exploration |
+
+### 16. 🔁 Reverse Engineering (5 tools)
+| Tool | Description |
+|------|-------------|
+| Ghidra | NSA reverse engineering framework |
+| Radare2 | Unix RE framework |
+| Jadx | Dex-to-Java decompiler |
+| AndroGuard | Android analysis/decompilation |
+| Apk2Gold | Android APK to Java |
+
+### 17. 🕵 Forensics (8 tools)
+| Tool | Description |
+|------|-------------|
+| Wireshark | Network capture and analysis |
+| Volatility3 | Memory forensics framework |
+| Binwalk | Firmware analysis/extraction |
+| Autopsy | Forensic investigation platform |
+| BulkExtractor | Disk/file content extraction |
+| Pspy | Process monitor (no root) |
+| Guymager | Forensic disk imaging |
+| Toolsley | Online investigation tools |
+
+### 18. 🖼 Steganography
+| Tool | Description |
+|------|-------------|
+| Steghide | Hide data in images/audio |
+| Stegcracker | Steghide password brute-forcer |
+
+### 19. 📚 Wordlist Generator (14 tools)
+| Tool | Description |
+|------|-------------|
+| Cupp | Common user passwords profiler |
+| Crunch | Custom character set wordlist generator |
+| CeWL | Spider-based wordlist generation |
+| Hashcat | World's fastest password cracker |
+| John | John the Ripper password cracker |
+| Haiti | Hash type identifier |
+| Psudohash | Keyword-based password mutation |
+| Mentalist | Graphical wordlist mutation tool |
+| PACK | Statsgen/maskgen/policygen toolkit |
+| SearchPass | Pattern-based password search |
+| TiKNR | Password mutation tool |
+| Statsgen | Password statistics analysis |
+| Maskgen | Hashcat mask generator |
+| Policygen | Password policy generator |
+
+### 20. ⚡ DDOS Attack (6 tools)
+| Tool | Description |
+|------|-------------|
+| SlowLoris | HTTP DoS attack |
+| UFONet | P2P DDoS toolkit |
+| GoldenEye | HTTP DoS test tool |
+| Saphyra | Python DDoS script |
+| DDoSTool | 36-method DDoS attack script |
+| Asyncrone | SYN flood DDoS weapon |
+
+### 21. 🐀 Remote Admin (RAT)
+| Tool | Description |
+|------|-------------|
+| PyShell | Python-based remote administration |
 
 ### 22. ✨ Other Tools
 | Tool | Description |
