@@ -138,6 +138,10 @@ class HackingTool:
                     repo_url = [p for p in parts if p.startswith("http")]
                     if repo_url:
                         dirname = repo_url[0].rstrip("/").rsplit("/", 1)[-1].replace(".git", "")
+                        # Check for custom target dir name (arg after URL)
+                        url_idx = parts.index(repo_url[0])
+                        if url_idx + 1 < len(parts):
+                            dirname = parts[url_idx + 1]
                         if os.path.isdir(dirname):
                             return True
         return False
