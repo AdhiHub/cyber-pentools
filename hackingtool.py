@@ -153,20 +153,20 @@ def show_help():
 
 # ── Header: ASCII art + live system info ──────────────────────────────────────
 
-# Full "HACKING TOOL" block-letter art — 12 lines, split layout with stats
+# "CYBER PENTOOLS" block-letter art — 12 lines, split layout with stats
 _BANNER_ART = [
-    " ██╗  ██╗ █████╗  ██████╗██╗  ██╗██╗███╗   ██╗ ██████╗ ",
-    " ██║  ██║██╔══██╗██╔════╝██║ ██╔╝██║████╗  ██║██╔════╝ ",
-    " ███████║███████║██║     █████╔╝ ██║██╔██╗ ██║██║  ███╗",
-    " ██╔══██║██╔══██║██║     ██╔═██╗ ██║██║╚██╗██║██║   ██║",
-    " ██║  ██║██║  ██║╚██████╗██║  ██╗██║██║ ╚████║╚██████╔╝",
-    " ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ",
-    "        ████████╗ ██████╗  ██████╗ ██╗",
-    "        ╚══██╔══╝██╔═══██╗██╔═══██╗██║",
-    "           ██║   ██║   ██║██║   ██║██║",
-    "           ██║   ██║   ██║██║   ██║██║",
-    "           ██║   ╚██████╔╝╚██████╔╝███████╗",
-    "           ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝",
+    " #####  #     # ######  ####### ######    ######  ####### #     # ####### ####### ####### #        #####  ",
+    "#     #  #   #  #     # #       #     #   #     # #       ##    #    #    #     # #     # #       #     # ",
+    "#         # #   #     # #       #     #   #     # #       # #   #    #    #     # #     # #       #       ",
+    "#          #    ######  #####   ######    ######  #####   #  #  #    #    #     # #     # #        #####  ",
+    "#          #    #     # #       #   #     #       #       #   # #    #    #     # #     # #             # ",
+    "#     #    #    #     # #       #    #    #       #       #    ##    #    #     # #     # #       #     # ",
+    " #####     #    ######  ####### #     #   #       ####### #     #    #    ####### ####### #######  #####  ",
+    "                                                                                                          ",
+    "                                                                                                          ",
+    "                                                                                                          ",
+    "                                                                                                          ",
+    "                                                                                                          ",
 ]
 
 _QUOTES = [
@@ -224,13 +224,13 @@ def _build_header() -> Panel:
         ("  kernel  ›  ", info["kernel"][:34]),
         ("  user    ›  ", f"{info['user']} @ {info['host'][:20]}"),
         ("  ip      ›  ", info["ip"]),
-            ("  tools   ›  ", f"{len(all_tools)} categories · 240+ tools"),
+        ("  tools   ›  ", f"{len(all_tools)} categories · 240+ tools"),
         ("  session ›  ", info["time"]),
         ("", ""),
         ("  python  ›  ", f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"),
         ("  arch    ›  ", platform.machine()),
         ("  status  ›  ", "✔ READY"),
-        ("", ""),
+        ("  author  ›  ", "AdhiHub"),
         ("", ""),
     ]
 
@@ -260,7 +260,7 @@ def _build_header() -> Panel:
 
     return Panel(
         body,
-        title=f"[bold #ff00ff][ ⚡ Cyber Pentools {VERSION_DISPLAY} ][/bold #ff00ff]",
+        title=f"[bold #ff00ff][ ⚡ Cyber Pentools {VERSION_DISPLAY} ][/bold #ff00ff] [bold #00ffff]ADHIHUB[/bold #00ffff]",
         title_align="left",
         subtitle=f"[dim][ {info['time']} ][/dim]",
         subtitle_align="right",
