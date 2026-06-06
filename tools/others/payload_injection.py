@@ -10,7 +10,7 @@ class DebInject(HackingTool):
     DESCRIPTION = "Debinject is a tool that inject malicious code into *.debs"
     INSTALL_COMMANDS = [
         "git clone https://github.com/UndeadSec/Debinject.git"]
-    RUN_COMMANDS = ["cd Debinject;python debinject.py"]
+    RUN_COMMANDS = ["cd Debinject;python3 debinject.py"]
     PROJECT_URL = "https://github.com/UndeadSec/Debinject"
 
 

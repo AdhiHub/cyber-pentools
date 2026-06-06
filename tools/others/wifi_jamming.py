@@ -12,7 +12,7 @@ class WifiJammerNG(HackingTool):
     REQUIRES_WIFI = True
     INSTALL_COMMANDS = [
         "git clone https://github.com/MisterBianco/wifijammer-ng.git",
-        "cd wifijammer-ng;pip install --user -r requirements.txt"
+        "cd wifijammer-ng;pip3 install --user -r requirements.txt"
     ]
     RUN_COMMANDS = [
         "cd wifijammer-ng && sudo python3 wifijammer.py --help",

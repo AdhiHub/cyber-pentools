@@ -34,7 +34,7 @@ class FacialFind(HackingTool):
         subprocess.run(["python3", "social_mapper.py", "-h"], cwd=str(setup_dir))
         console.print(
             "[bold magenta]Set username and password in social_mapper.py before running.[/]\n"
-            "[magenta]Usage: python social_mapper.py -f <folder> -i <path> -m fast <AcName> -fb -tw[/]"
+            "[magenta]Usage: python3 social_mapper.py -f <folder> -i <path> -m fast <AcName> -fb -tw[/]"
         )
 
 

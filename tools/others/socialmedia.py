@@ -29,7 +29,7 @@ class BruteForce(HackingTool):
                   "[!] python3 Brute_Force.py -g <Account@gmail.com> -l <File_list>"
     INSTALL_COMMANDS = [
         "git clone https://github.com/Matrix07ksa/Brute_Force.git",
-        "cd Brute_Force;sudo pip3 install proxylist;pip3 install mechanize"
+        "cd Brute_Force;sudo pip3 install proxylist;pip3 install --user mechanize"
     ]
     RUN_COMMANDS = ["cd Brute_Force;python3 Brute_Force.py -h"]
     PROJECT_URL = "https://github.com/Matrix07ksa/Brute_Force"
@@ -40,7 +40,7 @@ class Faceshell(HackingTool):
     DESCRIPTION = "Facebook BruteForcer"
     INSTALL_COMMANDS = [
         "git clone https://github.com/Matrix07ksa/Brute_Force.git",
-        "cd Brute_Force;sudo pip3 install proxylist;pip3 install mechanize"
+        "cd Brute_Force;sudo pip3 install proxylist;pip3 install --user mechanize"
     ]
     PROJECT_URL = "https://github.com/Matrix07ksa/Brute_Force"
 
