@@ -1,5 +1,7 @@
 # 🔥 Cyber Pentools — All-in-One Penetration Testing Toolkit
 
+![Preview](preview.png)
+
 **240+ hacking tools** organized into **22 categories** — information gathering, web exploitation, wireless attacks, password cracking, forensics, reverse engineering, C2 frameworks, and more.
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
