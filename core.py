@@ -63,7 +63,7 @@ def _show_inline_help():
             ("  Navigation\n", "bold #00ffff"),
             ("  ─────────────────────────────────\n", "dim"),
             ("  1–N    ", "bold #00ffff"), ("select item\n", "white"),
-            ("  97     ", "bold #00ffff"), ("install all (in category)\n", "white"),
+            ("  00     ", "bold #00ffff"), ("install all (in category)\n", "white"),
             ("\n  Tool menu: Install, Run, Update, Open Folder\n", "dim"),
             ("  77     ", "bold #00ffff"), ("go back\n", "white"),
             ("  98     ", "bold #00ffff"), ("open project page / archived\n", "white"),
@@ -438,7 +438,7 @@ class HackingToolsCollection:
             not_installed = [t for t in active if hasattr(t, "is_installed") and not t.is_installed]
             if not_installed:
                 table.add_row(
-                    "[bold green]97[/bold green]", "",
+                    "[bold green]00[/bold green]", "",
                     f"[bold green]Install all ({len(not_installed)} not installed)[/bold green]", "",
                 )
             if archived:
@@ -473,7 +473,7 @@ class HackingToolsCollection:
 
             if choice == 77:
                 return
-            elif choice == 97 and not_installed:
+            elif choice == 0 and not_installed:
                 console.print(Panel(
                     f"[bold]Installing {len(not_installed)} tools...[/bold]",
                     border_style="green", box=box.ROUNDED,
