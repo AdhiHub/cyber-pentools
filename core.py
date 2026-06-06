@@ -24,7 +24,9 @@ from constants import (
 install()
 
 _theme = Theme({
-    "purple":   "#7B61FF",
+    "purple":   "#00ffff",
+    "cyan":     "#00ffff",
+    "orange":   "#ff8800",
     "success":  THEME_SUCCESS,
     "error":    THEME_ERROR,
     "warning":  THEME_WARNING,
@@ -56,23 +58,23 @@ def validate_input(ip, val_range: list) -> int | None:
 
 def _show_inline_help():
     """Quick help available from any menu level."""
-    console.print(Panel(
-        Text.assemble(
-            ("  Navigation\n", "bold white"),
-            ("  ─────────────────────────────────\n", "dim"),
-            ("  1–N    ", "bold cyan"), ("select item\n", "white"),
-            ("  97     ", "bold cyan"), ("install all (in category)\n", "white"),
-            ("\n  Tool menu: Install, Run, Update, Open Folder\n", "dim"),
-            ("  99     ", "bold cyan"), ("go back\n", "white"),
-            ("  98     ", "bold cyan"), ("open project page / archived\n", "white"),
-            ("  ?      ", "bold cyan"), ("show this help\n", "white"),
-            ("  q      ", "bold cyan"), ("quit hackingtool\n", "white"),
-        ),
-        title="[bold magenta] ? Quick Help [/bold magenta]",
-        border_style="magenta",
-        box=box.ROUNDED,
-        padding=(0, 2),
-    ))
+        console.print(Panel(
+            Text.assemble(
+                ("  Navigation\n", "bold #00ffff"),
+                ("  ─────────────────────────────────\n", "dim"),
+                ("  1–N    ", "bold #00ffff"), ("select item\n", "white"),
+                ("  97     ", "bold #00ffff"), ("install all (in category)\n", "white"),
+                ("\n  Tool menu: Install, Run, Update, Open Folder\n", "dim"),
+                ("  99     ", "bold #00ffff"), ("go back\n", "white"),
+                ("  98     ", "bold #00ffff"), ("open project page / archived\n", "white"),
+                ("  ?      ", "bold #00ffff"), ("show this help\n", "white"),
+                ("  q      ", "bold #00ffff"), ("quit hackingtool\n", "white"),
+            ),
+            title="[bold #ff00ff] ? Quick Help [/bold #ff00ff]",
+            border_style="#ff00ff",
+            box=box.ROUNDED,
+            padding=(0, 2),
+        ))
     Prompt.ask("[dim]Press Enter to return[/dim]", default="")
 
 
@@ -159,9 +161,9 @@ class HackingTool:
             clear_screen()
             self.show_info()
 
-            table = Table(title="Options", box=box.SIMPLE_HEAVY)
-            table.add_column("No.", style="bold cyan", justify="center")
-            table.add_column("Action", style="bold yellow")
+            table = Table(title="[bold #ff00ff]Options[/bold #ff00ff]", box=box.SIMPLE_HEAVY)
+            table.add_column("No.", style="bold #00ffff", justify="center")
+            table.add_column("Action", style="bold #ff8800")
 
             for index, option in enumerate(self.OPTIONS):
                 table.add_row(str(index + 1), option[0])
@@ -383,7 +385,7 @@ class HackingToolsCollection:
             console.rule(f"[archived]Archived Tools — {self.TITLE}[/archived]", style="yellow")
 
             table = Table(box=box.MINIMAL_DOUBLE_HEAD, show_lines=True)
-            table.add_column("No.", justify="center", style="bold yellow")
+            table.add_column("No.", justify="center", style="bold #ff8800")
             table.add_column("Tool", style="dim yellow")
             table.add_column("Reason", style="dim white")
 
@@ -416,9 +418,9 @@ class HackingToolsCollection:
             archived = self._archived_tools()
 
             table = Table(title="Available Tools", box=box.SIMPLE_HEAD, show_lines=True)
-            table.add_column("No.", justify="center", style="bold cyan", width=6)
+            table.add_column("No.", justify="center", style="bold #00ffff", width=6)
             table.add_column("", width=2)  # installed indicator
-            table.add_column("Tool", style="bold yellow", min_width=24)
+            table.add_column("Tool", style="bold #ff8800", min_width=24)
             table.add_column("Description", style="white", overflow="fold")
 
             for index, tool in enumerate(active, start=1):

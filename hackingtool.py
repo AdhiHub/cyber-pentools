@@ -140,8 +140,8 @@ def show_help():
             ("  2      ", "bold cyan"), ("run tool\n", "white"),
             ("  99     ", "bold cyan"), ("back to category\n", "white"),
         ),
-        title="[bold magenta] ? Quick Help [/bold magenta]",
-        border_style="magenta",
+        title="[bold #ff00ff] ? Quick Help [/bold #ff00ff]",
+        border_style="#ff00ff",
         box=box.ROUNDED,
         padding=(0, 2),
     ))
@@ -243,10 +243,10 @@ def _build_header() -> Panel:
 
     for art_line, (lbl_text, val_text) in zip(_BANNER_ART, stat_lines):
         grid.add_row(
-            Text(art_line, style="bold bright_green"),
-            Text("  │ ", style="dim green"),
-            Text(lbl_text, style="dim green"),
-            Text(val_text, style="bright_green"),
+            Text(art_line, style="bold #00ffff"),
+            Text("  │ ", style="dim #00ffff"),
+            Text(lbl_text, style="dim #00ffff"),
+            Text(val_text, style="#00ffff"),
         )
 
     # Quote + warning below the split row
@@ -261,11 +261,11 @@ def _build_header() -> Panel:
 
     return Panel(
         body,
-        title=f"[bold bright_magenta][ HackingTool {VERSION_DISPLAY} ][/bold bright_magenta]",
+        title=f"[bold #ff00ff][ ⚡ Cyber Pentools {VERSION_DISPLAY} ][/bold #ff00ff]",
         title_align="left",
         subtitle=f"[dim][ {info['time']} ][/dim]",
         subtitle_align="right",
-        border_style="bright_magenta",
+        border_style="#ff00ff",
         box=box.HEAVY,
         padding=(0, 1),
     )
@@ -287,13 +287,13 @@ def build_menu():
     right = list(enumerate(categories[mid:],  start=mid + 1))
 
     grid = Table.grid(padding=(0, 1), expand=True)
-    grid.add_column("ln", justify="right", style="bold magenta", width=5)
+    grid.add_column("ln", justify="right", style="bold #ff00ff", width=5)
     grid.add_column("li", width=3)
-    grid.add_column("lt", style="magenta", ratio=1, no_wrap=True)
+    grid.add_column("lt", style="#ff00ff", ratio=1, no_wrap=True)
     grid.add_column("gap", width=3)
-    grid.add_column("rn", justify="right", style="bold magenta", width=5)
+    grid.add_column("rn", justify="right", style="bold #ff00ff", width=5)
     grid.add_column("ri", width=3)
-    grid.add_column("rt", style="magenta", ratio=1, no_wrap=True)
+    grid.add_column("rt", style="#ff00ff", ratio=1, no_wrap=True)
 
     for (li, (_, lic, ll)), r in zip_longest(left, right, fillvalue=None):
         if r:
@@ -304,8 +304,8 @@ def build_menu():
 
     console.print(Panel(
         grid,
-        title="[bold magenta] Select a Category [/bold magenta]",
-        border_style="bright_magenta",
+        title="[bold #ff00ff] Select a Category [/bold #ff00ff]",
+        border_style="#ff00ff",
         box=box.ROUNDED,
         padding=(0, 1),
     ))
@@ -313,18 +313,17 @@ def build_menu():
     # ── ToolManager row ──
     tm_num = len(categories) + 1
     console.print(
-        f"  [bold magenta]  {tm_num}[/bold magenta]  {update_def[1]}  "
-        f"[magenta]{update_def[2]}[/magenta]"
+        f"  [bold #ff00ff]  {tm_num}[/bold #ff00ff]  {update_def[1]}  "
+        f"[#ff00ff]{update_def[2]}[/#ff00ff]"
     )
 
-    # ── Claude-style dual-line prompt area ──
-    console.print(Rule(style="dim magenta"))
+    console.print(Rule(style="dim #ff00ff"))
     console.print(
-        "  [dim cyan]/[/dim cyan][dim]search[/dim]  "
-        "[dim cyan]t[/dim cyan] [dim]tags[/dim]  "
-        "[dim cyan]r[/dim cyan] [dim]recommend[/dim]  "
-        "[dim cyan]?[/dim cyan] [dim]help[/dim]  "
-        "[dim cyan]q[/dim cyan] [dim]quit[/dim]"
+        "  [#ff00ff]/[/#ff00ff][dim]search[/dim]  "
+        "[#ff00ff]t[/#ff00ff] [dim]tags[/dim]  "
+        "[#ff00ff]r[/#ff00ff] [dim]recommend[/dim]  "
+        "[#ff00ff]?[/#ff00ff] [dim]help[/dim]  "
+        "[#ff00ff]q[/#ff00ff] [dim]quit[/dim]"
     )
 
 
@@ -392,8 +391,8 @@ def filter_by_tag():
     # Show tags in a compact grid
     console.print(Panel(
         "  ".join(f"[bold cyan]{t}[/bold cyan]([dim]{len(tag_index[t])}[/dim])" for t in sorted_tags),
-        title="[bold magenta] Available Tags [/bold magenta]",
-        border_style="magenta", box=box.ROUNDED, padding=(0, 2),
+        title="[bold #ff00ff] Available Tags [/bold #ff00ff]",
+        border_style="#ff00ff", box=box.ROUNDED, padding=(0, 2),
     ))
 
     tag = Prompt.ask("[bold cyan]Enter tag[/bold cyan]", default="").strip().lower()
@@ -411,7 +410,7 @@ def filter_by_tag():
     table.add_column("No.", justify="center", style="bold cyan", width=5)
     table.add_column("", width=2)
     table.add_column("Tool", style="bold yellow", min_width=20)
-    table.add_column("Category", style="magenta", min_width=15)
+    table.add_column("Category", style="#ff00ff", min_width=15)
 
     for i, (tool, cat) in enumerate(matches, start=1):
         status = "[green]✔[/green]" if tool.is_installed else "[dim]✘[/dim]"
@@ -511,7 +510,7 @@ def recommend_tools():
         rtable.add_column("No.", justify="center", style="bold cyan", width=5)
         rtable.add_column("", width=2)
         rtable.add_column("Tool", style="bold yellow", min_width=20)
-        rtable.add_column("Category", style="magenta")
+        rtable.add_column("Category", style="#ff00ff")
 
         for i, (tool, cat) in enumerate(matches, start=1):
             status = "[green]✔[/green]" if tool.is_installed else "[dim]✘[/dim]"
@@ -562,7 +561,7 @@ def search_tools(query: str | None = None):
     )
     table.add_column("No.", justify="center", style="bold cyan", width=5)
     table.add_column("Tool", style="bold yellow", min_width=20)
-    table.add_column("Category", style="magenta", min_width=15)
+    table.add_column("Category", style="#ff00ff", min_width=15)
     table.add_column("Description", style="white", overflow="fold")
 
     for i, (tool, cat) in enumerate(matches, start=1):
@@ -584,8 +583,8 @@ def search_tools(query: str | None = None):
     if 1 <= idx <= len(matches):
         tool, cat = matches[idx - 1]
         console.print(Panel(
-            f"[bold magenta]{tool.TITLE}[/bold magenta]  [dim]({cat})[/dim]",
-            border_style="magenta", box=box.ROUNDED,
+            f"[bold #ff00ff]{tool.TITLE}[/bold #ff00ff]  [dim]({cat})[/dim]",
+            border_style="#ff00ff", box=box.ROUNDED,
         ))
         tool.show_options()
 
@@ -597,7 +596,7 @@ def interact_menu():
         try:
             build_menu()
             raw = Prompt.ask(
-                "[bold magenta]╰─>[/bold magenta]", default=""
+                "[bold #ff00ff]╰─>[/bold #ff00ff]", default=""
             ).strip()
 
             if not raw:
@@ -629,8 +628,8 @@ def interact_menu():
 
             if raw_lower in ("q", "quit", "exit"):
                 console.print(Panel(
-                    "[bold white on magenta]  Goodbye — Come Back Safely  [/bold white on magenta]",
-                    box=box.HEAVY, border_style="magenta",
+                    "[bold white on #ff00ff]  Goodbye — Come Back Safely  [/bold white on #ff00ff]",
+                    box=box.HEAVY, border_style="#ff00ff",
                 ))
                 break
 
@@ -644,8 +643,8 @@ def interact_menu():
             if 1 <= choice <= len(all_tools):
                 title, icon, _ = tool_definitions[choice - 1]
                 console.print(Panel(
-                    f"[bold magenta]{icon}  {title}[/bold magenta]",
-                    border_style="magenta", box=box.ROUNDED,
+                    f"[bold #ff00ff]{icon}  {title}[/bold #ff00ff]",
+                    border_style="#ff00ff", box=box.ROUNDED,
                 ))
                 try:
                     all_tools[choice - 1].show_options()

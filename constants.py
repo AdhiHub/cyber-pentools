@@ -38,16 +38,16 @@ else:
     APP_INSTALL_DIR = USER_CONFIG_DIR / "app"
     APP_BIN_PATH    = USER_CONFIG_DIR / "bin" / REPO_NAME
 
-# ── UI theme ──────────────────────────────────────────────────────────────────
-THEME_PRIMARY  = "bold magenta"
-THEME_BORDER   = "bright_magenta"
-THEME_SUCCESS  = "bold green"
-THEME_ERROR    = "bold red"
-THEME_WARNING  = "bold yellow"
-THEME_DIM      = "dim white"
-THEME_ARCHIVED = "dim yellow"
-THEME_URL      = "underline bright_blue"
-THEME_ACCENT   = "bold cyan"
+# ── UI theme (cyber neon palette) ─────────────────────────────────────────────
+THEME_PRIMARY  = "bold #00ffff"
+THEME_BORDER   = "#ff00ff"
+THEME_SUCCESS  = "bold #00ff88"
+THEME_ERROR    = "bold #ff3355"
+THEME_WARNING  = "bold #ffaa00"
+THEME_DIM      = "dim #888888"
+THEME_ARCHIVED = "dim #aa8800"
+THEME_URL      = "underline #4488ff"
+THEME_ACCENT   = "bold #ff8800"
 
 # ── Default config values ──────────────────────────────────────────────────────
 DEFAULT_CONFIG: dict = {
