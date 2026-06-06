@@ -429,9 +429,3 @@ curl -sSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.
 ```
 
 By using this software, you agree to use it **only for lawful purposes** and in compliance with all applicable local, state, and federal laws.
-
----
-
-## 🙌 Credits
-
-Originally based on [Z4nzu/hackingtool](https://github.com/Z4nzu/hackingtool) with extensive modifications, additional tools, bug fixes, and a redesigned menu system.
