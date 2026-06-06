@@ -669,10 +669,20 @@ def main():
         from os_detect import CURRENT_OS
 
         if CURRENT_OS.system == "windows":
-            console.print(Panel("[bold red]Please run this tool on Linux or macOS.[/bold red]"))
+            console.print(Panel("[bold red]This tool is for Linux environment only.[/bold red]"))
             if Confirm.ask("Open guidance link in your browser?", default=True):
                 webbrowser.open_new_tab(f"{REPO_WEB_URL}#windows")
             return
+
+        if CURRENT_OS.is_termux:
+            console.print(Panel(
+                "[bold yellow]Termux detected[/bold yellow]\n\n"
+                "  • Run [bold cyan]python3 hackingtool.py[/bold cyan] directly (no install)\n"
+                "  • Most tools requiring root/hardware will NOT work\n"
+                "  • OSINT, web scanning & information gathering work fine",
+                border_style="yellow",
+            ))
+            Prompt.ask("[dim]Press Enter to continue[/dim]", default="")
 
         if CURRENT_OS.system not in ("linux", "macos"):
             console.print(f"[yellow]Unsupported OS: {CURRENT_OS.system}. Proceeding anyway...[/yellow]")

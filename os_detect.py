@@ -14,6 +14,7 @@ class OSInfo:
     is_root: bool         = False
     home_dir: Path        = field(default_factory=Path.home)
     is_wsl: bool          = False  # Windows Subsystem for Linux
+    is_termux: bool       = False  # Termux on Android
     arch: str             = ""     # "x86_64", "aarch64", "arm64"
 
 
@@ -43,6 +44,10 @@ def detect() -> OSInfo:
             info.is_wsl = "microsoft" in Path("/proc/version").read_text().lower()
         except (FileNotFoundError, PermissionError):
             pass
+
+        # Detect Termux
+        import os
+        info.is_termux = "TERMUX_VERSION" in os.environ
 
         # Read /etc/os-release (standard on all modern distros)
         os_release: dict[str, str] = {}
