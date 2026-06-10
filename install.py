@@ -14,12 +14,24 @@ if sys.version_info < (3, 10):
     )
     sys.exit(1)
 
-from rich.console import Console
-from rich.panel import Panel
-from rich.prompt import Confirm
-from rich.progress import Progress, SpinnerColumn, TextColumn
-from rich.text import Text
-from rich import box
+# ── Auto-install rich if missing ─────────────────────────────────────────────────
+try:
+    from rich.console import Console
+    from rich.panel import Panel
+    from rich.prompt import Confirm
+    from rich.progress import Progress, SpinnerColumn, TextColumn
+    from rich.text import Text
+    from rich import box
+except ImportError:
+    import subprocess as _sp
+    print("[*] Installing rich (required for installer UI)...")
+    _sp.check_call([sys.executable, "-m", "pip", "install", "rich", "--quiet"])
+    from rich.console import Console
+    from rich.panel import Panel
+    from rich.prompt import Confirm
+    from rich.progress import Progress, SpinnerColumn, TextColumn
+    from rich.text import Text
+    from rich import box
 
 from constants import (
     REPO_URL, APP_INSTALL_DIR, APP_BIN_PATH,

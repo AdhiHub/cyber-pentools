@@ -28,6 +28,14 @@ pentools
 curl -fsSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.sh | sudo bash
 ```
 
+### Manual install (if you prefer to inspect the code first)
+```bash
+git clone https://github.com/AdhiHub/cyber-pentools.git
+cd cyber-pentools
+pip install -r requirements.txt    # installs 'rich' (needed by the installer UI)
+sudo python3 install.py
+```
+
 ---
 
 ## 📂 Tool Categories
