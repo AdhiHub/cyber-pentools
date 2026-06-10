@@ -677,7 +677,7 @@ def main():
         if CURRENT_OS.is_termux:
             console.print(Panel(
                 "[bold yellow]Termux detected[/bold yellow]\n\n"
-                "  • Run [bold cyan]python3 hackingtool.py[/bold cyan] directly (no install)\n"
+                "  • Run [bold cyan]python3 pentools.py[/bold cyan] directly (no install)\n"
                 "  • Most tools requiring root/hardware will NOT work\n"
                 "  • OSINT, web scanning & information gathering work fine",
                 border_style="yellow",

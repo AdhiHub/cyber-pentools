@@ -146,7 +146,7 @@ def install_system_packages():
 
 def _is_source_dir() -> bool:
     """Check if install.py is being run from a local clone."""
-    return (Path(__file__).resolve().parent / "hackingtool.py").exists()
+    return (Path(__file__).resolve().parent / "pentools.py").exists()
 
 
 def prepare_install_dir():
@@ -208,7 +208,7 @@ def create_launcher():
     launcher.write_text(
         "#!/bin/bash\n"
         f'source "{APP_INSTALL_DIR / VENV_DIR_NAME}/bin/activate"\n'
-        f'python3 "{APP_INSTALL_DIR / "hackingtool.py"}" "$@"\n'
+        f'python3 "{APP_INSTALL_DIR / "pentools.py"}" "$@"\n'
     )
     launcher.chmod(0o755)
     if APP_BIN_PATH.exists():
