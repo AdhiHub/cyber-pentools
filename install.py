@@ -241,7 +241,7 @@ def main():
     console.clear()
 
     console.print(Panel(
-        Text(f"HackingTool Installer  {VERSION_DISPLAY}", style="bold magenta"),
+        Text(f"Cyber Pentools Installer  {VERSION_DISPLAY}", style="bold magenta"),
         box=box.DOUBLE, border_style="bright_magenta",
     ))
 
