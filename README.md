@@ -25,7 +25,7 @@ pentools
 
 ### One-liner (Linux/macOS)
 ```bash
-curl -sSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.py | sudo python3
+curl -fsSL https://raw.githubusercontent.com/AdhiHub/cyber-pentools/main/install.sh | sudo bash
 ```
 
 ---
